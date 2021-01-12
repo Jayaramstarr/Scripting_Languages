@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B8</title>
+</head>
+<style>
+    table{
+        width: 100%;
+        text-align: center;
+    }
+    th{
+        background-color: darkcyan;
+        text-transform: uppercase;
+        padding: 4px;
+        font-size: 20px;
+        color: white;
+    }
+    th:hover{
+        background-color: lightgreen;
+        color: darkcyan;
+    }
+    #data-table{
+        margin: 30px;
+
+    }
+    td{
+        display: table-cell;
+        vertical-align: inherit;
+        font-size: 50px;
+    }
+</style>
+<body>
+    
+
+    <h1 style="margin: 20px 0; text-align: center; font-size: 90px; color: green;" class="heading">Tesla Company</h1>
+
+    <table id="menu">
+        <tr>
+        </tr>
+    </table>
+
+    <table id="data-table" hidden>
+        <tr><td>Name:</td><td id="model"></td></tr>
+        <tr><td>Picture:</td><td id="picture"></td></tr>
+        <tr><td>Price:</td><td id="price"></td></tr>
+        <tr><td>Year:</td><td id="year"></td></tr>
+    </table>
+
+
+</body>
+
+<script>
+    const teslaModels = [
+        {
+            "model":"modelS",
+            "name":"Model S",
+            "price":69200,
+            "year":2016
+        },
+        {
+            "model": "modelX",
+            "name": "Model X",
+            "price": 83700,
+            "year": 2017
+        },
+        {
+            "model": "model3",
+            "name": "Model 3",
+            "price": 35000,
+            "year": 2017
+        },
+    ]
+    teslaModels.forEach( item => {
+        const ele = document.createElement('th')
+        ele.id = item.model
+        ele.innerHTML = item.name
+        document.querySelector('#menu tr').appendChild(ele)
+    })
+    teslaModels.forEach( item => {
+        const ele = document.getElementById(item.model)
+        ele.onmouseover = () => {
+            document.getElementById('data-table').removeAttribute('hidden')
+            document.getElementById('model').innerHTML=item.name
+            document.getElementById('picture').innerHTML=`<img src="${item.model}.png">`
+            document.getElementById('price').innerHTML=item.price
+            document.getElementById('year').innerHTML=item.year
+        }
+    })
+    teslaModels.forEach( item => {
+        const ele = document.getElementById(item.model)
+        ele.onmouseleave = () => {
+            document.getElementById('data-table').setAttribute('hidden','true')
+        }
+    })
+</script>
+
+</html>
