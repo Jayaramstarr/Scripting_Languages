@@ -1,0 +1,70 @@
+<!-- <html>
+<body>
+<input id="t" type="text" name="txt">
+<input type="button" name="but" value="Length of String" onclick="lenstr()">
+<p id="val"></p>
+<p id="l"></p>
+</body>
+<script type="text/javascript">
+function lenstr(){
+var s = document.getElementById("t").value;
+m=0;
+x=" ";
+p = s.split(" ");
+for(i=0;i<p.length;i++){
+if(m<p[i].length)
+m=p[i].length;
+x=p[i];
+}
+document.getElementById("val").innerHTML = x;
+document.getElementById("l").innerHTML = m;
+}
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A8</title>
+</head>
+<body>
+    
+    <h1 style="margin: 40px;">Enter the sentence</h1>
+    <div style="margin: 40px;">
+        <textarea name="sentence" id="sentence" cols="30" rows="10"></textarea>
+    </div>
+
+    <button style="margin: 40px;" onclick="myfunc()" class="submit">Submit</button>
+
+    <h2 style="margin: 40px;" class="result"></h2>
+
+</body>
+
+<script>
+
+    const text = document.getElementById('sentence')
+    const result = document.querySelector('.result')
+
+    const myfunc = () => {
+        if(text.value)
+        {
+            const words = text.value.split(" ")
+            let maxWord,maxLen=0
+            words.forEach( word => {
+                if(word.length>maxLen)
+                {
+                    maxLen=word.length
+                    maxWord=word
+                }
+            })
+            result.innerHTML = `Longest word is "${maxWord}" with length ${maxLen}`
+        }
+        else
+            result.innerHTML = "Please enter text"
+    }
+
+</script>
+
+</html>

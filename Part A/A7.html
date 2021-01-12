@@ -1,0 +1,77 @@
+<!-- <html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7. </title>
+  <script type="text/javascript" src="sample.js"></script>
+
+</head>
+<body>
+<h3 style="text-align:center">Check the divisibility of a number</h3><br>
+<form>
+1st Number : <input type="text" id="firstNumber" /><br>
+<input type="button" onClick="test37()" Value="divisible by 3 or 7" />
+</form>
+<script>
+function test37() 
+{ x = document.getElementById("firstNumber").value;
+  if (x % 3 == 0 || x % 7 == 0) 
+  {
+    document.getElementById("result").innerHTML = true;
+  } 
+  else {
+    document.getElementById("result").innerHTML = false;
+  }
+
+}
+</script>
+<p>The Result is : <br>
+<span id = "result"></span>
+</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A7</title>
+</head>
+<body>
+  
+  <h1 style="margin: 40px;">Divisibility Check</h1>
+
+  <form class="form" id="form">
+    <div style="margin: 40px;">
+      <label for="name">Number</label>
+      <input type="number" name="number" id="number" placeholder="Enter...">
+    </div>
+    <button style="margin: 30px;" class="submit">Submit</button>
+  </form>
+    
+  <h2 style="margin: 40px;" class="result"></h2>
+
+</body>
+
+<!-- <script>
+  const num = document.querySelector('#number')
+  const result = document.querySelector('.result')
+  document.querySelector('.submit').addEventListener('click', e =>{
+    e.preventDefault()
+    if(num.value)
+    {
+      if(num.value == 0)
+        result.innerHTML = "False"
+      else if(num.value%3==0 || num.value%7==0)
+        result.innerHTML = "True"
+      else
+        result.innerHTML = "False"
+    }
+    else
+      result.innerHTML = ""
+  })
+</script> -->
+
+<script src="A7.js"></script>
+</html>

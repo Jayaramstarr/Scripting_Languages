@@ -1,0 +1,68 @@
+<!-- <html>
+<head>
+	<title>
+		Currency conversion
+	</title>
+<script>
+
+var dollars = parseInt(prompt("Please enter dollars:"));
+var rupees = dollars * 64;
+document.writeln("The result (Dollars to Rupees) is"+rupees);
+document.writeln();
+
+
+var rupee=parseInt(prompt("Please enter Rupees:"));
+var dollar=rupee/64;
+document.writeln("The result (Rupees to Dollars) is"+dollar);
+document.writeln();
+
+
+var rup=parseInt(prompt("Please enter Rupees:"));
+var euro=rup/89.80;  
+document.writeln("The result (Rupees to Euro) is"+euro);
+document.writeln();
+
+var eur=parseInt(prompt("Please enter Euro:"));
+var rs=eur*89.80;  
+document.writeln("The result (Euro to Rupees) is"+rs);
+document.writeln();
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>A10</title>
+</head>
+
+<body>
+	
+	<h2 style="margin: 20px;" id="rtu">The result from rupees to USD is $ </h2>
+	<h2 style="margin: 20px;" id="utr">The result from USD to rupees is &#8377; </h2>
+	<h2 style="margin: 20px;" id="rte">The result from rupees to euros is &#163; </h2>
+	<h2 style="margin: 20px;" id="etr">The result from euros to rupees is &#8377; </h2>
+
+</body>
+<script>
+	const rtu = parseInt(prompt("Enter currency in rupees for coversion to USD"))
+	const utr = parseInt(prompt("Enter currency in USD for coversion to rupees"))
+	const rte = parseInt(prompt("Enter currency in rupees for coversion to euros"))
+	const etr = parseInt(prompt("Enter currency in euros for coversion to rupees"))
+	document.getElementById('rtu').innerHTML = document.getElementById('rtu').innerHTML + Math.floor(rtu*64)
+	document.getElementById('utr').innerHTML = document.getElementById('utr').innerHTML + Math.floor(rtu/64)
+	document.getElementById('rte').innerHTML = document.getElementById('rte').innerHTML + Math.floor
+	(rtu*89.8)
+	document.getElementById('etr').innerHTML = document.getElementById('etr').innerHTML + Math.ceil(rtu/89.8)
+</script>
+
+</html>

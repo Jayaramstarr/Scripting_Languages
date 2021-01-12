@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <script type="text/javascript">
+    function submit() {
+      var cakeQuantity = document.getElementById("cakeQuantity").value;
+      var cookieQuantity = document.getElementById("cookieQuantity").value;
+      var cakeSelected = document.getElementById("cake").checked;
+      var cookieSelected = document.getElementById("cookies").checked;
+      if(cakeSelected && cakeQuantity && isNormalInteger(cakeQuantity)){
+        alert("Bill for cake = "+(parseInt(cakeQuantity)*100))
+      }else if(cookieSelected && cookieQuantity && isNormalInteger(cookieQuantity)){
+        alert("Bill for cookies = "+(parseInt(cookieQuantity)*50))
+      }else if(!cakeSelected && !cookieQuantity){
+        alert("Select an item");
+      }else{
+        alert("Invalid a valid positive integer");
+      }
+    }
+    function isNormalInteger(str) {
+      var n = Math.floor(Number(str));
+      return String(n) === str && n >= 0;
+    }
+  </script>
+</head>
+<body>
+
+  <input type="radio" name="item" id="cake" class="input-hidden" />
+  <label for="cake">
+    <img src="cake.png" width="100px" />
+  </label>
+  <br>
+  <p> Cost = Rs. 100 </p>
+  <p>Quantity:<input type="number" id="cakeQuantity"></p>
+  <br>
+
+  <input type="radio" name="item" id="cookies" class="input-hidden" />
+  <label for="happy">
+    <img src="cookie.png" alt="Cookies" width="100px" />
+  </label>
+  <br>
+  <p> Cost = Rs. 50 </p>
+  <p>Quantity:<input type="number" id="cookieQuantity"></p>
+  <br> <br> <br>
+  <input type="submit" onClick="submit()" value="Order">
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B7</title>
+</head>
+<body>
+
+  <h1 style="text-align: center;">Bakery Shopping</h1>
+  
+  <form action="" class="form" id="form">
+
+    <div style="margin: 40px 70px;" class="cake-div">
+      <input style="text-align: center;" type="radio" name="item" id="cake" value="cake">
+      <label for="cake"><img src="cake.png" width="100px"></label><br>
+      <h2>Price: &#8377;100</h2>
+      <label for="cake-quantity"><b>Quantity</b></label>
+      <input type="number" name="number" id="cake-quantity" placeholder="Enter...">
+    </div>
+
+    <div style="margin: 40px 70px;" class="cookie-div">
+      <input style="text-align: center;" type="radio" name="item" id="cookie" value="cookie">
+      <label for="cookie"><img src="cookie.png" width="100px"></label><br>
+      <h2>Price: &#8377;50</h2>
+      <label for="cookie-quantity"><b>Quantity</b></label>
+      <input type="number" name="number" id="cookie-quantity" placeholder="Enter...">
+    </div>
+
+    <button style="margin: 0px 70px;" class="submit">Submit</button>
+    <em><h3><p  style="margin: 0px 70px;" class="bill"></p></h3></em>
+  </form>
+
+</body>
+
+<script>
+  const bill = document.querySelector('.bill')
+  document.querySelector('.submit').addEventListener('click', e =>{
+    const cakeQuantity = Math.round(document.getElementById('cake-quantity').value)
+    const cookieQuantity = Math.round(document.getElementById('cookie-quantity').value)
+    e.preventDefault()
+    if(document.getElementById('cake').checked)
+      if(cakeQuantity)
+        bill.innerHTML = `Bill for ${cakeQuantity} cake units is ${cakeQuantity*100}`
+      else
+        bill.innerHTML = "Enter Quantity"
+    else if(document.getElementById('cookie').checked)
+      if(cookieQuantity)
+        bill.innerHTML = `Bill for ${cookieQuantity} cookie units is ${cookieQuantity*100}`
+      else
+        bill.innerHTML = "Enter Quantity"
+    else
+      bill.innerHTML = "Please select item"
+  })
+</script>
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6</title>
+</head>
+<body>
+
+    <h1 style="margin: 40px;">Customer Feedback</h1>
+    <div style="margin: 40px;">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name...">
+    </div>
+    <div style="margin: 40px;">
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" id="male" class="gender" value="male">Male</input>
+        <input type="radio" name="gender" id="female" class="gender" value="female">Female</input>
+        <input type="radio" name="gender" id="other" class="gender" value="other">Other</input>
+    </div>
+    <div style="margin: 40px;">
+        <textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="Enter your feedback..."></textarea>
+    </div>
+
+    <button onclick="myfunc()" class="submit">Submit</button>
+
+    <div style="margin: 40px auto;" class="output">
+        <h3 class="feedback-heading"></h3>
+        <p class="name"></p>
+        <p class="gen"></p>
+        <p class="feedback"></p>
+    </div>
+    
+
+</body>
+
+<script>
+
+    const myfunc = () => {
+
+        const name = document.getElementById('name')
+        const gender = document.querySelectorAll('.gender')
+        const feedback = document.getElementById('feedback')
+
+        document.querySelector('.feedback-heading').innerHTML = "Feedback:"
+
+        if(name.value)
+            document.querySelector('.name').innerHTML = `Name of customer is ${name.value}`
+
+        gender.forEach( gen => {
+            if(gen.checked)
+                document.querySelector('.gen').innerHTML = `Gender of customer is ${gen.value}`
+        })
+
+        if(feedback.value)
+            document.querySelector('.feedback').innerHTML = `Feedback of customer is "${feedback.value}"`
+
+    }
+
+</script>
+
+
+</html>
